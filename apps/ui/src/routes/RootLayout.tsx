@@ -12,7 +12,7 @@ const RootLayout = ({ theme }: { theme: ThemeProps }) => {
 
   const outlet = useOutlet();
 
-  if (!user && !loading) return <Navigate to="/login" />;
+  // if (!user && !loading) return <Navigate to="/login" />;
 
   return (
     <StyledRoot>
@@ -35,4 +35,7 @@ export const StyledOutletWrapper = styled.div`
   width: 100%;
   max-width: calc(100vw - 80px);
   height: 100%;
+  @media(max-width: 570px) {
+    max-width: calc(100vw - 60px);
+  }
 `;

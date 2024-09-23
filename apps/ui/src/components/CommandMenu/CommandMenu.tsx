@@ -207,7 +207,7 @@ const CommandMenu = ({ open, setCmdkOpen, theme, toggleTheme }: any) => {
           <Command.Group>
             {groupedItems &&
               Object.entries(groupedItems)?.map(([groupName, items]: [string, any[]], index) => (
-                <>
+                <div key={index}>
                   {items?.map((item, itemIndex) => (
                     <CommandItem
                       key={`${item.id}-${item.name}-${itemIndex}`}
@@ -218,7 +218,7 @@ const CommandMenu = ({ open, setCmdkOpen, theme, toggleTheme }: any) => {
                       itemIcon={item.icon}
                     />
                   ))}
-                </>
+                </div>
               ))}
           </Command.Group>
         </>

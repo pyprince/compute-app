@@ -117,7 +117,9 @@ const Counter: React.FC<CounterProps> & {
     )
   }, [size, kind, color, countChangeAnimationState])
 
-  const countText = count?.toString().length > maxDigits ? `${10 ** maxDigits - 1}+` : String(count)
+  let countText = ''
+  if(undefined !== count && undefined !== maxDigits)
+    countText = count?.toString().length > maxDigits ? `${10 ** maxDigits - 1}+` : String(count)
   const counter = <span id={`counter-${id}`}>{prefix + countText}</span>
 
   return (

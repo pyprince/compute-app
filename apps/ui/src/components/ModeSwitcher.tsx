@@ -45,7 +45,7 @@ const ModeSwitcher = () => {
                     value={strCutter(
                       picked_shared_account?.length > 0
                         ? `${picked_shared_account[0].assigned_account_name}'s Team`
-                        : selected_account?.name,
+                        : (selected_account?.name ? selected_account?.name : ''),
                       24,
                       true
                     )}

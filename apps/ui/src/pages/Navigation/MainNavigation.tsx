@@ -1,20 +1,16 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import About from 'share-ui/components/Icon/Icons/components/About';
-// import Add from 'share-ui/components/Icon/Icons/components/Add'
 import ValueOutline from 'share-ui/components/Icon/Icons/components/ValueOutline';
 import Collection from 'share-ui/components/Icon/Icons/components/Collection';
 import Team from 'share-ui/components/Icon/Icons/components/Team';
 import Launch from 'share-ui/components/Icon/Icons/components/Launch';
 import Mobile from 'share-ui/components/Icon/Icons/components/Mobile';
 import { useLocation, useNavigate } from 'react-router-dom';
-import includes from 'lodash/includes';
 import { t } from 'i18next';
 import AvatarDropDown, { ThemeProps } from 'components/AvatarDropDown';
 import { useDomainConfig } from 'utils/useDomainConfig';
 import Tooltip from 'share-ui/components/Tooltip/Tooltip';
-import Chats from 'share-ui/components/Icon/Icons/components/Chats';
-import Integrations from 'share-ui/components/Icon/Icons/components/integrations';
 import FineTuning from 'share-ui/components/Icon/Icons/components/FineTuning';
 // eslint-disable-next-line import/no-named-as-default
 import Cloud from 'share-ui/components/Icon/Icons/components/Cloud';
@@ -23,16 +19,12 @@ import {
   BoardTemplate,
   DollarOutline,
   Locked,
-  Person,
-  Search,
-  Teams,
+  // Person,
+  // Search,
+  // Teams,
 } from 'share-ui/components/Icon/Icons';
-import ModeSwitcher from 'components/ModeSwitcher';
-import { useAppModeContext } from 'context/AppModeContext';
-import Key from 'share-ui/components/Icon/Icons/components/Key';
-import { accountTypeEnum } from 'types/account';
-import Subnet from 'share-ui/components/Icon/Icons/components/Subnet';
-import { AuthContext } from 'contexts';
+// import Key from 'share-ui/components/Icon/Icons/components/Key';
+// import Subnet from 'share-ui/components/Icon/Icons/components/Subnet';
 
 interface NavigationPermissions {
   pod: boolean;
@@ -73,13 +65,10 @@ const getNavigationList = ({ permission, pathname }: { permission: NavigationPer
 ];
 
 const MainNavigation = ({ restricted, theme }: { restricted?: boolean; theme: ThemeProps }) => {
-  const domainEnv = import.meta.env;
-  const isDatura = domainEnv.REACT_APP_ENV === 'datura';
+  // const domainEnv = import.meta.env;
 
   const { getDomainConfig } = useDomainConfig();
   const domainLogo = getDomainConfig('logo');
-
-  const isHome = true;
 
   const navigate = useNavigate();
 
@@ -287,12 +276,12 @@ const StyledCorner = styled.div`
   top: 8px;
   right: -16px;
 `;
-const StyledAPIIcon = styled(Key)<{ picked: boolean }>`
-  path {
-    fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
-    stroke: transparent;
-  }
-`;
+// const StyledAPIIcon = styled(Key)<{ picked: boolean }>`
+//   path {
+//     fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
+//     stroke: transparent;
+//   }
+// `;
 
 const StyledBillingIcon = styled(DollarOutline)<{ picked: boolean }>`
   path {
@@ -326,26 +315,26 @@ export const StyledSettingsIcon = styled(FineTuning)`
     stroke: ${({ theme }) => theme.body.iconColor};
   }
 `;
-const StyledSubnetIcon = styled(Subnet)<{ picked?: boolean }>`
-  path {
-    fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
-  }
-`;
-const StyledAdminIcon = styled(Person)<{ picked?: boolean }>`
-  path {
-    fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
-    stroke: transparent;
-  }
-`;
-const StyledExploreIcon = styled(Search)<{ picked?: boolean }>`
-  path {
-    fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
-    stroke: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
-  }
-`;
-const StyledTeamsIcon = styled(Teams)<{ picked?: boolean }>`
-  path {
-    fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
-    stroke: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
-  }
-`;
+// const StyledSubnetIcon = styled(Subnet)<{ picked?: boolean }>`
+//   path {
+//     fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
+//   }
+// `;
+// const StyledAdminIcon = styled(Person)<{ picked?: boolean }>`
+//   path {
+//     fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
+//     stroke: transparent;
+//   }
+// `;
+// const StyledExploreIcon = styled(Search)<{ picked?: boolean }>`
+//   path {
+//     fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
+//     stroke: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
+//   }
+// `;
+// const StyledTeamsIcon = styled(Teams)<{ picked?: boolean }>`
+//   path {
+//     fill: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
+//     stroke: ${({ theme, picked }) => (picked ? '#FFF' : theme.body.iconColor)};
+//   }
+// `;

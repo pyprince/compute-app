@@ -28,6 +28,8 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     user,
   };
 
+  console.log(contextValue)
+
   const domainTitle = getDomainConfig('title');
   const domainWelcomeMessage = getDomainConfig('welcome_message');
 

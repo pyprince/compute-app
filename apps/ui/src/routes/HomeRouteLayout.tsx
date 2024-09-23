@@ -75,6 +75,7 @@ const StyledHomeRoot = styled.div`
   height: 100%;
 
   overflow: auto;
+  padding-right: 20px;
 `;
 const StyledOutletWrapper = styled.div`
   width: 100%;

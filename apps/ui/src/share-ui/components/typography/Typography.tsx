@@ -32,7 +32,6 @@ function Typography<T extends React.ElementType = 'span'>({
     types?: typeof TypographyTypes
   }) {
   const finalStyle = useStyle(style, { color: customColor })
-  const typograpghClassName = `${type}_${size}`
 
   return (
     <StyledTypography style={finalStyle} size={size} bold={bold} semiBold={semiBold}>

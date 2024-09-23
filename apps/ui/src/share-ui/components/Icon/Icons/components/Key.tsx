@@ -13,7 +13,7 @@ const Key: React.FC<KeyProps> = ({ size, ...props }) => (
     xmlns='http://www.w3.org/2000/svg'
     {...props}
   >
-    <g id='Icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+    <g id='Icons' stroke='none' strokeWidth='1' fill='none' fill-rule='evenodd'>
       <g id='Rounded' transform='translate(-135.000000, -1266.000000)'>
         <g id='Communication' transform='translate(100.000000, 1162.000000)'>
           <g id='-Round-/-Communication-/-vpn_key' transform='translate(34.000000, 98.000000)'>

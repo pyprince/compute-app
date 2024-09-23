@@ -63,10 +63,10 @@ export const useProfile = () => {
 
     const formik = useFormik({
         initialValues: {
-            name: user.name,
+            name: user?.name,
             company_name: account?.name,
-            email: user.email,
-            avatar: user.avatar,
+            email: user?.email,
+            avatar: user?.avatar,
             account_type: account?.accountType,
         },
         // validationSchema: templateValidationSchema,
@@ -75,10 +75,11 @@ export const useProfile = () => {
     })
 
     async function handleSubmit(values: { name: string; avatar: string }) {
-        const user = {
-            name: values.name,
-            avatar: values.avatar,
-        }
+        console.log(values)
+        // const user = {
+        //     name: values.name,
+        //     avatar: values.avatar,
+        // }
         // const result = await updateUser(user)
 
         // if (result) {
@@ -116,7 +117,7 @@ const passwordValidationSchema = yup.object().shape({
 
 export const useUpdatePassword = () => {
     // const { updatePassword } = useUpdateUserPassword()
-    const { setToast } = useContext(ToastContext)
+    // const { setToast } = useContext(ToastContext)
 
     const formik = useFormik({
         initialValues: {
@@ -129,6 +130,7 @@ export const useUpdatePassword = () => {
     })
 
     async function handleSubmit(values: { new_password: string; confirm_password: string }) {
+        console.log(values)
         // const result = await updatePassword({ password: values.confirm_password })
 
         // if (result) {

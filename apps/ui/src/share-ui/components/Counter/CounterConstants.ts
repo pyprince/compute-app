@@ -26,8 +26,8 @@ const OLD_COUNTER_SIZES = {
 // Support old sizes (backward compatible)
 type Size = keyof typeof OLD_COUNTER_SIZES | typeof SIZES[keyof typeof SIZES];
 
-export const getActualSize = (size: Size) => {
-  if (size in OLD_COUNTER_SIZES) {
+export const getActualSize = (size: Size | undefined) => {
+  if (size && size in OLD_COUNTER_SIZES) {
     // @ts-expect-error Element implicitly has an 'any' type because expression of type 'Size' can't be used to index typeof OLD_COUNTER_SIZES
     return OLD_COUNTER_SIZES[size];
   }

@@ -577,7 +577,7 @@ Dropdown.propTypes = {
    */
   tooltipContent: PropTypes.string,
 
-  kind: PropTypes.DROPDOWN_KINDS,
+  kind: PropTypes.string,
 }
 
 export default Dropdown

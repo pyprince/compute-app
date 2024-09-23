@@ -6,7 +6,6 @@ import { setAccountId } from 'helpers/authHelper';
 import Cookies from 'universal-cookie';
 import { AuthContext } from 'contexts';
 import { Account } from 'types/account';
-import { useNavigate } from 'react-router-dom';
 
 type AppModeContextType = {
   accounts: Account[];
@@ -32,7 +31,6 @@ type AppModeContextProviderProps = {
 };
 
 export function AppModeContextProvider({ children }: AppModeContextProviderProps): JSX.Element {
-  const navigate = useNavigate();
 
   const { user: current_user_account } = useContext(AuthContext);
 

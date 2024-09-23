@@ -24,10 +24,11 @@ const StyledRoot = styled.div`
   height: 100vh;
 
   width: 80px;
-  min-width: 80px;
-  max-width: 80px;
 
   transition: left 0.1s ease-in-out;
+  @media (max-width: 570px) {
+    width: 60px;
+  }
 `
 
 export const StyledSearchOutlineIcon = styled(SearchOutline)`

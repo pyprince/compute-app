@@ -44,6 +44,10 @@ const StyledFormContainer = styled.div`
   padding: 0 87px;
   width: 550px;
   max-width: 550px;
+  @media (max-width: 450px) {
+    padding: 0;
+    width: auto;
+  }
 `
 
 const StyledMainWrapper = styled.div``

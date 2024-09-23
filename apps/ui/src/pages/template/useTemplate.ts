@@ -1,12 +1,11 @@
 import { ToastContext } from 'contexts';
 import { useModal } from 'hooks';
 import React, { useContext } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const useTemplate = () => {
   const { setToast } = useContext(ToastContext);
   const { openModal, closeModal } = useModal();
-  // const location = useLocation()
   const navigate = useNavigate();
   const params = useParams();
 

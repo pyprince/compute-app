@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { StyledCenterFormContainer, StyledFormContainer } from 'styles/globalStyle.css'
 import Heading from 'share-ui/components/Heading/Heading'
-import { useEffect } from 'react'
 import HeadingTertiary from 'components/Heading/Tertiary'
 import HeadingPrimary from 'components/Heading/Primary'
 

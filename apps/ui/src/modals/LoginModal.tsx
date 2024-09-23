@@ -33,6 +33,7 @@ export default withRenderModal('login-modal')(LoginModal)
 const StyledModalBody = styled.div`
   /* height: 100vh; */
   /* max-height: 600px; */
-  padding-bottom: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 `
 const StyledModal = styled(Modal)``

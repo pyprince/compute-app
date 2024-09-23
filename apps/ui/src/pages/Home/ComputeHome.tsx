@@ -103,6 +103,7 @@ export default ComputeHome;
 
 export const StyledCardsWrapper = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
@@ -110,4 +111,8 @@ export const StyledCardsWrapper = styled.div`
   /* height: 100%; */
 
   padding: 5px 32px;
+
+  @media (max-width: 480px) {
+    padding: 5px 10px;
+  }
 `;

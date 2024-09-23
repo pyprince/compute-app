@@ -9,7 +9,8 @@ import useGithubLogin from 'pages/Auth/Login/useGithubLogin'
 import TextFieldFormik from 'components/TextFieldFormik'
 import { StyledCenterFormContainer, StyledFormContainer } from 'styles/globalStyle.css'
 
-import Typography from 'share-ui/components/typography/Typography'
+// import Typography from 'share-ui/components/typography/Typography'
+import { TypographySizes, TypographyTypes } from 'share-ui/components/typography/TypographyConstants'
 import Button from 'share-ui/components/Button/Button'
 
 import githubIcon from 'assets/icons/githubIcon.png'
@@ -61,11 +62,11 @@ const Login = () => {
           type={Heading.types?.h2}
           style={{ fontSize: 24, lineHeight: 'normal' }}
         />
-        <TypographyTertiary
+        {/* <TypographyTertiary
           value={t('ai-agents-description')}
-          type={Typography.types.label}
-          size={Typography.sizes.sm}
-        />
+          type={TypographyTypes.LABEL}
+          size={TypographySizes.sm}
+        /> */}
       </StyledHeaderWrapper>
 
       <StyledFormContainer>
@@ -95,7 +96,7 @@ const Login = () => {
           <ButtonPrimary
             onClick={async () => {
               const res = await githubLogin()
-              window.location.href = res.auth_url
+              // window.location.href = res.auth_url
             }}
           >
             <StyledInnerButtonWrapper>
@@ -111,7 +112,7 @@ const Login = () => {
           <ButtonPrimary
             onClick={async () => {
               const res = await googleLogin()
-              window.location.href = res.auth_url
+              // window.location.href = res.auth_url
             }}
           >
             <StyledInnerButtonWrapper>
@@ -152,8 +153,8 @@ const Login = () => {
         <StyledSignUpWrapper>
           <TypographyTertiary
             value={t('dont-have-account')}
-            type={Typography.types.label}
-            size={Typography.sizes.md}
+            type={TypographyTypes.LABEL}
+            size={TypographySizes.md}
           />
           <button
             onClick={() => {
@@ -162,8 +163,8 @@ const Login = () => {
           >
             <TypographyPrimary
               value={t('sign-up')}
-              type={Typography.types.label}
-              size={Typography.sizes.md}
+              type={TypographyTypes.LABEL}
+              size={TypographySizes.md}
               as={'a'}
               style={{
                 textDecorationLine: 'underline',
@@ -207,4 +208,8 @@ export const StyledHeaderWrapper = styled.div`
   gap: 22px;
 
   margin-top: 10px;
+  @media (max-width: 450px) {
+    padding: 0 10px;
+    width: 360px;
+  }
 `

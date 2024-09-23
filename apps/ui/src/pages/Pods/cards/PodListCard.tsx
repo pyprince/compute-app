@@ -73,4 +73,7 @@ export const StyledStatusTypography = styled(Typography)<{ running: boolean }>`
   background: ${({ running }) => (running ? '#95ff752b' : '#fceaecb2')};
   padding: 4px 15px;
   border-radius: 8px;
+  @media(max-width: 400px) {
+    padding: 2px 6px;
+  }
 `

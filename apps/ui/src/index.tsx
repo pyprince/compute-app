@@ -5,7 +5,6 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const isLocalhost = (url: string) => url.includes('localhost')
-console.log(import.meta.env.REACT_APP_SENTRY_DNS)
 Sentry.init({
   dsn: import.meta.env.REACT_APP_SENTRY_DNS,
   integrations: [

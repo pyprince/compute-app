@@ -7,11 +7,8 @@ const useGoogleLogin = () => {
   // const { googleLoginComplete, loading } = useGoogleLoginCompleteService()
 
   const location = useLocation()
-  console.log(location)
   const queryParams = new URLSearchParams(location.search)
-  console.log(queryParams)
   const code = queryParams.get('code')
-  console.log(code)
 
   useEffect(() => {
       if (code && location.pathname.includes('/google-login')) {

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { StyledFormInputWrapper } from 'styles/formStyles.css';
 
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import FormikTextField from 'components/TextFieldFormik';
 import TextareaFormik from 'components/TextareaFormik';
 
@@ -40,38 +41,40 @@ const TemplateForm = ({ formik, label, credentials }: TemplateFormProps) => {
   return (
     <StyledFormInputWrapper>
       <div />
-      <Box display={'grid'} gridTemplateColumns={'1fr .3fr .3fr'} gap={3} alignItems={'start'}>
+      <Box display={'grid'} gridTemplateColumns={{ md: '1fr 1fr'}} gap={3} alignItems={'start'}>
         <FormikTextField name="name" placeholder={'Template name'} label={'Name'} />
-        <Dropdown
-          label={'Template Type'}
-          fieldName={'template_type'}
-          setFieldValue={formik?.setFieldValue}
-          fieldValue={formik.values.template_type}
-          options={[
-            { label: 'Pod', value: 'pod' },
-            { label: 'Serverless', value: 'serverless' },
-          ]}
-          optionSize={'small'}
-          size={'small'}
-          labelGap={4}
-        />
-        <Dropdown
-          label={'Compute Type'}
-          fieldName={'compute_type'}
-          setFieldValue={formik?.setFieldValue}
-          fieldValue={formik.values.compute_type}
-          options={[
-            { label: 'Nvidia GPU', value: 'nvidia gpu' },
-            { label: 'Amd GPU', value: 'amd gpu' },
-            { label: 'CPU', value: 'cpu' },
-          ]}
-          optionSize={'small'}
-          size={'small'}
-          labelGap={4}
-        />
+        <Box display={'grid'} gridTemplateColumns={{sm: '1fr 1fr'}} gap={3} alignItems={'start'}>
+          <Dropdown
+            label={'Template Type'}
+            fieldName={'template_type'}
+            setFieldValue={formik?.setFieldValue}
+            fieldValue={formik.values.template_type}
+            options={[
+              { label: 'Pod', value: 'pod' },
+              { label: 'Serverless', value: 'serverless' },
+            ]}
+            optionSize={'small'}
+            size={'small'}
+            labelGap={4}
+          />
+          <Dropdown
+            label={'Compute Type'}
+            fieldName={'compute_type'}
+            setFieldValue={formik?.setFieldValue}
+            fieldValue={formik.values.compute_type}
+            options={[
+              { label: 'Nvidia GPU', value: 'nvidia gpu' },
+              { label: 'Amd GPU', value: 'amd gpu' },
+              { label: 'CPU', value: 'cpu' },
+            ]}
+            optionSize={'small'}
+            size={'small'}
+            labelGap={4}
+          />
+        </Box>
       </Box>
 
-      <Box display={'grid'} gridTemplateColumns={'1fr 1fr'} gap={3}>
+      <Box display={'grid'} gridTemplateColumns={{sm: '1fr 1fr'}} gap={3}>
         <FormikTextField name="container_image" placeholder={'Container Image'} label={'Container Image'} />
         <Dropdown
           label={'Container Registry Credentials'}
@@ -93,7 +96,7 @@ const TemplateForm = ({ formik, label, credentials }: TemplateFormProps) => {
           fieldName={'container_start_command'}
         />
       </Box>
-      <Box display={'grid'} gridTemplateColumns={'1fr 1fr'} gap={3}>
+      <Box display={'grid'} gridTemplateColumns={{sm: '1fr 1fr'}} gap={3}>
         <Box display={'grid'} gridTemplateColumns={'1fr 1fr'} gap={3}>
           <FormikTextField name="container_disk" placeholder={'Container Disc'} label={'Container Disc'} />
           {formik.values.compute_type !== 'cpu' && (
@@ -104,7 +107,7 @@ const TemplateForm = ({ formik, label, credentials }: TemplateFormProps) => {
           <FormikTextField name="volume_mount_path" placeholder={'Volume Mount Path'} label={'Volume Mount Path'} />
         )}
       </Box>
-      <Box display={'grid'} gridTemplateColumns={'1fr 1fr'} gap={3}>
+      <Box display={'grid'} gridTemplateColumns={{sm: '1fr 1fr'}} gap={3}>
         <FormikTextField
           name="expose_http_ports"
           placeholder={'Expose HTTP Ports (Max 10)'}

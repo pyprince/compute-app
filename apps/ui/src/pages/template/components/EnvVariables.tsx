@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import ControlPointIcon from '@mui/icons-material/ControlPoint'
 // eslint-disable-next-line import/no-extraneous-dependencies
+import React from 'react'
 import ClearIcon from '@mui/icons-material/Clear'
 import Box from '@mui/material/Box'
 import { ButtonPrimary } from 'components/Button/Button'
@@ -119,7 +120,7 @@ const EnvVariables = ({ formik }: { formik: FormikProps<FormValues> }) => {
       >
         {formik.values.environment_variables.env.map(
           (item: { key: string; value: string }, index: number) => (
-            <>
+            <React.Fragment key={index}>
               <TextField
                 name='key'
                 placeholder={'Key'}
@@ -170,7 +171,7 @@ const EnvVariables = ({ formik }: { formik: FormikProps<FormValues> }) => {
               <Box sx={{ cursor: 'pointer' }} onClick={() => handleDeleteRow(index)}>
                 <ClearIcon />
               </Box>
-            </>
+            </React.Fragment>
           ),
         )}
       </Box>

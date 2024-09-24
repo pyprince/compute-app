@@ -27,6 +27,7 @@ const AvatarDropDown = ({ theme }: { theme: ThemeProps }) => {
 
   const handleLogout = async () => {
     dispatch(clearUser());
+    navigate('/login');
   };
 
   return (

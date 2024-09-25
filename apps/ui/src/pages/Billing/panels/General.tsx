@@ -151,7 +151,7 @@ const StyledRow = styled.div`
 
   gap: 10px;
 
-  width: 400px;
+  max-width: 400px;
 
   & + & {
     margin-top: 10px;
